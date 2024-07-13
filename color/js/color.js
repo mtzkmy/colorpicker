@@ -7,7 +7,21 @@ const text = document.querySelector('#colorText');
 
 const picker = document.querySelector('#ColorPicker');
 
-text.textContent = `カラーコード: ${picker.value}` ;
+
+
+const colorBg = () =>{
+  // 選択した色を背景色に設定
+document.body.style.backgroundColor = picker.value;
+
+// カラーコードを表示
+  text.textContent = `カラーコード: ${picker.value}` ;
+
+// 色の名前も表示するようif文を追加する
+if (picker.value === '#ffffff') {
+  text.textContent = `カラーコード: ${picker.value} (white)`;
+}
+};
 
 // 色が選択されたらカラーコードを表示する
 picker.addEventListener('input', colorBg);
+
